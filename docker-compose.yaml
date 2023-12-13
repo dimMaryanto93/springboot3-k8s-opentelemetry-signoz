@@ -1,0 +1,28 @@
+version: '3.9'
+volumes:
+  pg_data: { }
+services:
+  pg-example:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_USER: example
+      POSTGRES_DB: example
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  springweb-example:
+    image: dimmaryanto93/spring-k8s-signoz:springweb
+    ports:
+      - "9000:8080"
+    build:
+      dockerfile: Dockerfile
+      context: ./springweb
+      args:
+        JAR_FILE: springweb-1.0.0-release.jar
+    environment:
+      POSTGRES_HOST: pg-example
+      POSTGRES_PORT: 5432
+    depends_on:
+      - pg-example
