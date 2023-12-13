@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: springweb-example
+data:
+  SERVER_PORT: "8080"
+  OTEL_RESOURCE_ATTRIBUTES: "service:name=springweb-example"
