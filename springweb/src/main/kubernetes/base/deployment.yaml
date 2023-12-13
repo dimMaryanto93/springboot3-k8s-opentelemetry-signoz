@@ -37,4 +37,7 @@ spec:
             - secretRef:
                 name: signoz-cred
                 optional: false
+            - secretRef:
+                name: db-cred
+                optional: false
       restartPolicy: Always
