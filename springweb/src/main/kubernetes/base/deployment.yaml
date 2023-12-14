@@ -27,7 +27,7 @@ spec:
       containers:
         - name: springweb-jpa-example
           image: dimmaryanto93/spring-k8s-signoz:springweb
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           envFrom:
