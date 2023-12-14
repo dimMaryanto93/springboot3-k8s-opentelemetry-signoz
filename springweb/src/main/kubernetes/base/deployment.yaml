@@ -27,7 +27,8 @@ spec:
       containers:
         - name: springweb-jpa-example
           image: dimmaryanto93/spring-k8s-signoz:springweb
-          args: [ "java","-javaagent:opentelemetry-javaagent.jar" , "-jar", "-Djava.security.egd=file:/dev/./urandom", "spring-boot.jar" ]
+          command: [ "java","-javaagent:/usr/share/applications/opentelemetry-javaagent.jar" , "-jar", "-Djava.security.egd=file:/dev/./urandom", "spring-boot.jar" ]
+          args: []
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
@@ -37,5 +38,4 @@ spec:
                 optional: false
             - secretRef:
                 name: signoz-cred
-                optional: false
       restartPolicy: Always

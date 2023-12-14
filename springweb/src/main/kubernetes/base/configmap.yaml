@@ -4,4 +4,4 @@ metadata:
   name: springweb-example
 data:
   SERVER_PORT: "8080"
-  OTEL_RESOURCE_ATTRIBUTES: "service:name=springweb-jpa-example"
+  OTEL_RESOURCE_ATTRIBUTES: "service:name=springweb-k8s-example"
