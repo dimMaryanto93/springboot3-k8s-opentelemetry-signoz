@@ -18,6 +18,8 @@
     <modules>
         <module>springweb-jpa</module>
         <module>springweb</module>
+        <module>microservices-restapi/api-nasabah</module>
+        <module>microservices-restapi/api-wilayah</module>
     </modules>
 
     <properties>

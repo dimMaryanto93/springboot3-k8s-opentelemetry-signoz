@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  api-wilayah-example:
+    image: dimmaryanto93/spring-k8s-signoz:microservice-api-wilayah
+    ports:
+      - "9091:8080"
+    build:
+      dockerfile: Dockerfile
+      context: ./microservices-restapi/api-wilayah
+      args:
+        JAR_FILE: microservice-api-wilayah-1.0.0-release.jar
+
+  api-nasabah-example:
+    image: dimmaryanto93/spring-k8s-signoz:microservice-api-nasabah
+    ports:
+      - "9092:8080"
+    build:
+      dockerfile: Dockerfile
+      context: ./microservices-restapi/api-nasabah
+      args:
+        JAR_FILE: microservice-api-nasabah-1.0.0-release.jar
