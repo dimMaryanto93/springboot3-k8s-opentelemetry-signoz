@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springweb-example
+  name: springweb-jpa-example
   labels:
-    app: springweb-example
+    app: springweb-jpa-example
     tier: backend
     env: development
     version: stable
@@ -11,15 +11,15 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: springweb-example
+      app: springweb-jpa-example
       tier: backend
       env: development
       version: stable
   template:
     metadata:
-      name: springweb-example
+      name: springweb-jpa-example
       labels:
-        app: springweb-example
+        app: springweb-jpa-example
         tier: backend
         env: development
         version: stable
@@ -32,7 +32,7 @@ spec:
             - containerPort: 8080
           envFrom:
             - configMapRef:
-                name: springweb-example
+                name: springweb-jpa-example
                 optional: false
             - secretRef:
                 name: signoz-cred
