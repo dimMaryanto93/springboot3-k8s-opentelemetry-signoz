@@ -14,8 +14,8 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
 
-  springweb-example: # springboot service monolith
-    image: dimmaryanto93/spring-k8s-signoz:springweb
+  springweb-jpa-example: # springboot service monolith
+    image: dimmaryanto93/spring-k8s-signoz:springweb-jpa
     ports:
       - "9000:8080"
     build:

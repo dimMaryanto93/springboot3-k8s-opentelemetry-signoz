@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: springweb-example
+server:
+  port: ${SERVER_PORT:9000}

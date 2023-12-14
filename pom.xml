@@ -17,6 +17,7 @@
 
     <modules>
         <module>springweb-jpa</module>
+        <module>springweb</module>
     </modules>
 
     <properties>

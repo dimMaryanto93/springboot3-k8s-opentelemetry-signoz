@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springweb-example
+  labels:
+    app: springweb-example
+    tier: backend
+    env: development
+    version: stable
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springweb-example
+      tier: backend
+      env: development
+      version: stable
+  template:
+    metadata:
+      name: springweb-example
+      labels:
+        app: springweb-example
+        tier: backend
+        env: development
+        version: stable
+    spec:
+      containers:
+        - name: springweb-jpa-example
+          image: dimmaryanto93/spring-k8s-signoz:springweb
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: springweb-example
+                optional: false
+            - secretRef:
+                name: signoz-cred
+                optional: false
+            - secretRef:
+                name: db-cred
+                optional: false
+      restartPolicy: Always
