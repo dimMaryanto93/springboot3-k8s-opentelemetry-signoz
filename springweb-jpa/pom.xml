@@ -9,7 +9,7 @@
         <version>1.0.0-release</version>
     </parent>
 
-    <artifactId>springweb</artifactId>
+    <artifactId>springweb-jpa</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

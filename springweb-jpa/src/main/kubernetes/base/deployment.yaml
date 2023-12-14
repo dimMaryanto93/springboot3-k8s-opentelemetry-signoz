@@ -25,8 +25,8 @@ spec:
         version: stable
     spec:
       containers:
-        - name: springweb-example
-          image: dimmaryanto93/spring-k8s-signoz:springweb
+        - name: springweb-jpa-example
+          image: dimmaryanto93/spring-k8s-signoz:springweb-jpa
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080

@@ -8,7 +8,7 @@ ENV OTEL_EXPORTER_OTLP_HEADERS="signoz-access-token={SIGNOZ_INGESTION_KEY}"
 ENV OTEL_EXPORTER_OTLP_ENDPOINT="https://ingest.{region}.signoz.cloud:443"
 
 # installing os dependencies
-RUN apk add wget
+RUN apk add wget curl
 
 # setup application
 WORKDIR /usr/share/applications
