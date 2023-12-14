@@ -14,17 +14,27 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
 
-  springweb-jpa-example: # springboot service monolith
+  springweb-jpa-example: # springboot jpa service monolith
     image: dimmaryanto93/spring-k8s-signoz:springweb-jpa
     ports:
-      - "9000:8080"
+      - "9002:8080"
     build:
       dockerfile: Dockerfile
-      context: ./springweb
+      context: ./springweb-jpa
       args:
-        JAR_FILE: springweb-1.0.0-release.jar
+        JAR_FILE: springweb-jpa-1.0.0-release.jar
     environment:
       POSTGRES_HOST: pg-example
       POSTGRES_PORT: 5432
     depends_on:
       - pg-example
+
+  springweb-example: # springboot service monolith
+    image: dimmaryanto93/spring-k8s-signoz:springweb
+    ports:
+      - "9001:8080"
+    build:
+      dockerfile: Dockerfile
+      context: ./springweb
+      args:
+        JAR_FILE: springweb-1.0.0-release.jar
