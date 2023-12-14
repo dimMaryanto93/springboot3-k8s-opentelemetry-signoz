@@ -31,3 +31,4 @@ build/
 
 ### MacOS System ###
 .DS_Store
+/libs

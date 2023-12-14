@@ -27,6 +27,7 @@ spec:
       containers:
         - name: springweb-jpa-example
           image: dimmaryanto93/spring-k8s-signoz:springweb
+          args: [ "java","-javaagent:opentelemetry-javaagent.jar" , "-jar", "-Djava.security.egd=file:/dev/./urandom", "spring-boot.jar" ]
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
